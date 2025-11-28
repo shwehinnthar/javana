@@ -35,6 +35,18 @@ header img {
     border-radius: 8px;
 }
 
+/* ===== MOBILE MENU BUTTON ===== */
+.mobile-menu-btn {
+    display: none;
+    background: #cc0000;
+    color: white;
+    padding: 14px;
+    font-size: 22px;
+    cursor: pointer;
+    text-align: center;
+    user-select: none;
+}
+
 /* ===== NAVIGATION ===== */
 nav {
     display: flex;
@@ -54,6 +66,26 @@ nav a {
 
 nav a:hover {
     background: rgba(255,255,255,0.25);
+}
+
+/* ===== MOBILE RESPONSIVE FOR NAV ===== */
+@media (max-width: 768px) {
+    nav {
+        display: none;
+        flex-direction: column;
+    }
+    nav.show {
+        display: flex;
+    }
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    nav a {
+        border-bottom: 1px solid rgba(255,255,255,0.3);
+        width: 100%;
+        text-align: center;
+    }
 }
 
 /* ===== PAGES ===== */
@@ -108,6 +140,11 @@ table td {
     box-shadow: 0 3px 8px rgba(0,0,0,0.2);
 }
 
+/* ----- Small Screens (Phones) ----- */
+@media (max-width: 480px) {
+    .home-images img { max-width: 90%; }
+}
+
 /* ===== FOOTER ===== */
 footer {
     background: linear-gradient(to right, #cc0000, #ff9900);
@@ -116,18 +153,6 @@ footer {
     padding: 18px 10px;
     margin-top: 40px;
     font-size: 16px;
-}
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 768px) {
-    header { flex-direction: column; font-size: 20px; padding: 12px; }
-    nav a { width: 100%; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.3); }
-    table th, table td { font-size: 13px; }
-    .home-images img { max-width: 45%; }
-}
-
-@media (max-width: 480px) {
-    .home-images img { max-width: 90%; }
 }
 </style>
 </head>
@@ -138,12 +163,14 @@ footer {
 <header>
     <img src="uagga.png" alt="Logo">
     ဦးအဂ္ဂ(တောင်ငူ)<br>
-    ပါရမီ အင်္ဂလိပ် ဘာသာစကား သင်တန်းကျောင်း
-    <img src="uagga.png" alt="Logo">
+    ပါရမီ အင်္ဂလိပ် ဘာသာစကား သင်တန်းကျောင်း    
 </header>
 
+<!-- MOBILE MENU BUTTON -->
+<div class="mobile-menu-btn" onclick="toggleMenu()">☰ Menu</div>
+
 <!-- NAVIGATION -->
-<nav>
+<nav id="mainNav">
     <a href="#" onclick="showPage('home')">Home</a>
     <a href="#" onclick="showPage('about')">About</a>
     <a href="#" onclick="showPage('class')">Class</a>
@@ -157,12 +184,11 @@ footer {
     <h2>Welcome to ပါရမီ အင်္ဂလိပ် ဘာသာစကား သင်တန်းကျောင်း</h2>
     <p>အခြေခံမှ အဆင့်မြင့်အထိ အင်္ဂလိပ်ဘာသာ အတန်းများကို Level အလိုက် သင်ကြားပေးနေပါသည်။</p>
     
-    <!-- Intro Images -->
     <div class="home-images">
-        <img src="https://via.placeholder.com/250x180?text=Classroom" alt="Classroom">
-        <img src="https://via.placeholder.com/250x180?text=Students+Studying" alt="Students Studying">
-        <img src="https://via.placeholder.com/250x180?text=Speaking+Practice" alt="Speaking Practice">
-        <img src="a1.jpg" alt="More"><img src="a2.jpg" alt="More"><img src="a3.jpg" alt="More">
+        <img src="https://via.placeholder.com/250x180?text=Classroom">
+        <img src="https://via.placeholder.com/250x180?text=Students+Studying">
+        <img src="https://via.placeholder.com/250x180?text=Speaking+Practice">
+        <img src="a1.jpg"><img src="a2.jpg"><img src="a3.jpg">
     </div>
 </div>
 
@@ -176,7 +202,7 @@ footer {
 <!-- CLASS -->
 <div id="class" class="page">
     <h2>Class Information</h2>
-    <p>အောက်ပါဇယားတွင် သင်တန်းအမည်၊ ဘာသာရပ်၊ အချိန်ဇယားနှင့် သင်ကြားမည့်ဆရာကို အချက်အလက်ပြည့်စုံ သတ်မှတ်ဖော်ပြထားပါသည်။</p>
+    <p>သင်တန်းအမည်၊ ဘာသာရပ်၊ အချိန်ဇယားနှင့် သင်ကြားမည့်ဆရာ အချက်အလက်များ</p>
 
     <table>
         <tr>
@@ -222,9 +248,9 @@ footer {
 <div id="statement" class="page">
     <h2>School Statement</h2>
     <p style="font-size:16px; line-height:1.7;">
-        ✔ ကျောင်းသားများအနာဂတ်အောင်မြင်မှုကို ဦးစားပေးသင်ကြားပါသည်။<br>
-        ✔ အရည်အသွေးမြင့် သင်ကြားရေးဆရာ/ဆရာမများက တာဝန်ယူပို့ချပေးပါသည်။<br>
-        ✔ အခမဲ့ Speaking Club နှင့် Revision Class များကိုလည်း ပြုလုပ်ပေးပါသည်။<br>
+        ✔ ကျောင်းသားများအောင်မြင်မှုကို ဦးစားပေးသင်ကြားပါသည်။<br>
+        ✔ အရည်အသွေးမြင့် ဆရာ/ဆရာမများက တာဝန်ယူပို့ချပေးပါသည်။<br>
+        ✔ အခမဲ့ Speaking Club၊ Revision Class များ ပြုလုပ်ပေးပါသည်။<br>
         ✔ သင်တန်းတိုင်းကို စနစ်တကျ စီမံထားပါသည်။
     </p>
 </div>
@@ -232,15 +258,15 @@ footer {
 <!-- GALLERY -->
 <div id="gallery" class="page">
     <h2>Gallery</h2>
-    <p>သင်တန်းသားများ လေ့လာနေသည့် အမှတ်တရဓာတ်ပုံများ</p>
-    <img src="https://via.placeholder.com/350" style="width:100%; max-width:360px; border-radius:10px;">
+    <p>မှတ်တမ်းဓာတ်ပုံများ</p>
+    <img src="javana.jpg" style="width:100%; max-width:360px; border-radius:10px;">
 </div>
 
 <!-- CONTACT -->
 <div id="contact" class="page">
     <h2>Contact Us</h2>
     <p>ဖုန်း: 09-xxxxxxx</p>
-    <p>လိပ်စာ: Parami English Language Center, South Okkalapa Tsp, Yangon, Myanmar</p>
+    <p>လိပ်စာ: Parami English Language Center, South Okkalapa Tsp, Yangon</p>
 </div>
 
 <!-- FOOTER -->
@@ -253,6 +279,11 @@ function showPage(pageName) {
     let pages = document.querySelectorAll('.page');
     pages.forEach(p => p.classList.remove('active'));
     document.getElementById(pageName).classList.add('active');
+    document.querySelector("nav").classList.remove("show"); // close menu after click
+}
+
+function toggleMenu() {
+    document.querySelector("nav").classList.toggle("show");
 }
 </script>
 
