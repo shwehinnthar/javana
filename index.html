@@ -6,97 +6,141 @@
 <title>ပါရမီ အင်္ဂလိပ် ဘာသာစကား သင်တန်းကျောင်း</title>
 
 <style>
-    body {
-        margin: 0;
-        font-family: Arial, sans-serif;
+/* ===== GLOBAL ===== */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ffe8c2, #ffd0a8, #ffbfa3);
+    background-attachment: fixed;
+    color: #333;
+}
 
-        /* Background with soft gradient */
-        background: linear-gradient(135deg, #ffe8c2, #ffd0a8, #ffbfa3);
-        background-attachment: fixed;
-    }
+/* ===== HEADER ===== */
+header {
+    background: linear-gradient(to right, #ff0000, #ffcc00);
+    color: white;
+    padding: 18px;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
 
-    /* Header */
-    header {
-        background: linear-gradient(to right, #ff0000, #ffcc00);
-        color: white;
-        padding: 18px;
-        text-align: center;
-        font-size: 25px;
-        font-weight: bold;
-        text-shadow: 1px 1px 3px black;
-    }
+header img {
+    height: 50px;
+    border-radius: 8px;
+}
 
-    /* Navigation */
-    nav {
-        display: flex;
-        justify-content: center;
-        background: linear-gradient(to right, #cc0000, #ff9900);
-        flex-wrap: wrap;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    }
+/* ===== NAVIGATION ===== */
+nav {
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(to right, #cc0000, #ff9900);
+    flex-wrap: wrap;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
 
-    nav a {
-        color: white;
-        padding: 14px 22px;
-        text-decoration: none;
-        font-size: 18px;
-        transition: 0.3s;
-    }
-    nav a:hover {
-        background: rgba(255,255,255,0.25);
-    }
+nav a {
+    color: white;
+    padding: 14px 22px;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.3s;
+}
 
-    /* Page */
-    .page {
-        display: none;
-        padding: 25px;
-        max-width: 900px;
-        margin: auto;
-        margin-top: 25px;
-        background: rgba(255,255,255,0.9);
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.2);
-        backdrop-filter: blur(5px);
-    }
-    .active {
-        display: block;
-    }
+nav a:hover {
+    background: rgba(255,255,255,0.25);
+}
 
-    /* Table */
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 15px;
-    }
-    table th {
-        background: #ff9900;
-        padding: 10px;
-        color: #fff;
-        font-size: 16px;
-    }
-    table td {
-        padding: 10px;
-        background: #ffe8c7;
-        border: 1px solid #e6b47c;
-        font-size: 15px;
-    }
+/* ===== PAGES ===== */
+.page {
+    display: none;
+    padding: 25px;
+    max-width: 900px;
+    margin: auto;
+    margin-top: 25px;
+    background: rgba(255,255,255,0.9);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    backdrop-filter: blur(5px);
+}
 
-    /* Responsive */
-    @media (max-width: 600px) {
-        header { font-size: 20px; padding: 12px; }
-        nav a {
-            width: 100%; padding: 12px; text-align: center;
-            border-bottom: 1px solid rgba(255,255,255,0.3);
-        }
-        table th, table td { font-size: 13px; }
-    }
+.page.active { display: block; }
+
+/* ===== TABLE ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+table th {
+    background: #ff9900;
+    padding: 10px;
+    color: #fff;
+    font-size: 16px;
+}
+
+table td {
+    padding: 10px;
+    background: #ffe8c7;
+    border: 1px solid #e6b47c;
+    font-size: 15px;
+}
+
+/* ===== HOME IMAGES ===== */
+.home-images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.home-images img {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background: linear-gradient(to right, #cc0000, #ff9900);
+    color: white;
+    text-align: center;
+    padding: 18px 10px;
+    margin-top: 40px;
+    font-size: 16px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    header { flex-direction: column; font-size: 20px; padding: 12px; }
+    nav a { width: 100%; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.3); }
+    table th, table td { font-size: 13px; }
+    .home-images img { max-width: 45%; }
+}
+
+@media (max-width: 480px) {
+    .home-images img { max-width: 90%; }
+}
 </style>
 </head>
 
 <body>
 
-<header>ပါရမီ အင်္ဂလိပ် ဘာသာစကား သင်တန်းကျောင်း</header>
+<!-- HEADER WITH LOGO -->
+<header>
+    <img src="https://via.placeholder.com/50" alt="Logo">
+    ပါရမီ အင်္ဂလိပ် ဘာသာစကား သင်တန်းကျောင်း
+</header>
 
+<!-- NAVIGATION -->
 <nav>
     <a href="#" onclick="showPage('home')">Home</a>
     <a href="#" onclick="showPage('about')">About</a>
@@ -109,7 +153,15 @@
 <!-- HOME -->
 <div id="home" class="page active">
     <h2>Welcome to ပါရမီ အင်္ဂလိပ် ဘာသာစကား သင်တန်းကျောင်း</h2>
-    <p>အခြေခံမှ စ၍ အဆင့်မြင့်အထိ အင်္ဂလိပ်ဘာသာ အတန်းများကို Level အလိုက် သင်ကြားပေးနေပါသည်။</p>
+    <p>အခြေခံမှ အဆင့်မြင့်အထိ အင်္ဂလိပ်ဘာသာ အတန်းများကို Level အလိုက် သင်ကြားပေးနေပါသည်။</p>
+    
+    <!-- Intro Images -->
+    <div class="home-images">
+        <img src="https://via.placeholder.com/250x180?text=Classroom" alt="Classroom">
+        <img src="https://via.placeholder.com/250x180?text=Students+Studying" alt="Students Studying">
+        <img src="https://via.placeholder.com/250x180?text=Speaking+Practice" alt="Speaking Practice">
+        <img src="https://via.placeholder.com/250x180?text=More" alt="More">
+    </div>
 </div>
 
 <!-- ABOUT -->
@@ -131,42 +183,36 @@
             <th>အချိန်</th>
             <th>ပို့ချမည့်ဆရာ</th>
         </tr>
-
         <tr>
             <td>Basic English Class</td>
             <td>Grammar + Speaking</td>
             <td>9:00 AM – 11:00 AM</td>
             <td>Sayadaw Agga</td>
         </tr>
-
         <tr>
             <td>Pre-intermediate Class</td>
             <td>Grammar + Reading</td>
             <td>1:00 PM – 3:00 PM</td>
             <td>U Kyaw Zin</td>
         </tr>
-
         <tr>
             <td>Intermediate / Advanced Course</td>
             <td>4 Skills Training</td>
             <td>3:30 PM – 5:30 PM</td>
             <td>Daw Mya Mya</td>
         </tr>
-
         <tr>
             <td>Speaking & Listening Class</td>
             <td>Speaking + Listening Practice</td>
             <td>10:00 AM – 12:00 PM</td>
             <td>U Aung Ko</td>
         </tr>
-
         <tr>
             <td>IELTS Foundation / IELTS 4 Skills</td>
             <td>IELTS Reading, Writing, Listening, Speaking</td>
             <td>6:00 PM – 8:00 PM</td>
             <td>U Myint Swe</td>
         </tr>
-
     </table>
 </div>
 
@@ -174,17 +220,17 @@
 <div id="statement" class="page">
     <h2>School Statement</h2>
     <p style="font-size:16px; line-height:1.7;">
-        ✔ ပါရမီ အင်္ဂလိပ်ဘာသာ သင်တန်းကျောင်းမှာ ကျောင်းသား/သူများအနာဂတ်အောင်မြင်မှုကို ဦးစားပေးသင်ကြားပါသည်။<br>
-        ✔ အရည်အသွေးမြင့် သင်ကြားရေးဆရာ/ဆရာမများက သင်တန်းတိုင်းကို တာဝန်ယူပို့ချပေးပါသည်။<br>
-        ✔ အတန်းသားများအတွက် အခမဲ့ Speaking Club နှင့် Revision Class များကိုလည်း ပြုလုပ်ပေးပါသည်။<br>
-        ✔ ဘာသာစကားအရ ကျွမ်းကျင်သည့်အထိ သင်ယူလေ့လာနိုင်ရေးအတွက် သင်တန်းတိုင်းကို စနစ်တကျ စီမံထားပါသည်။
+        ✔ ကျောင်းသားများအနာဂတ်အောင်မြင်မှုကို ဦးစားပေးသင်ကြားပါသည်။<br>
+        ✔ အရည်အသွေးမြင့် သင်ကြားရေးဆရာ/ဆရာမများက တာဝန်ယူပို့ချပေးပါသည်။<br>
+        ✔ အခမဲ့ Speaking Club နှင့် Revision Class များကိုလည်း ပြုလုပ်ပေးပါသည်။<br>
+        ✔ သင်တန်းတိုင်းကို စနစ်တကျ စီမံထားပါသည်။
     </p>
 </div>
 
 <!-- GALLERY -->
 <div id="gallery" class="page">
     <h2>Gallery</h2>
-    <p>သင်တန်းသားများ လေ့လာနေသည့် အမှတ်တရဓာတ်ပုံများကို ဖော်ပြထားပါသည်။</p>
+    <p>သင်တန်းသားများ လေ့လာနေသည့် အမှတ်တရဓာတ်ပုံများ</p>
     <img src="https://via.placeholder.com/350" style="width:100%; max-width:360px; border-radius:10px;">
 </div>
 
@@ -195,6 +241,10 @@
     <p>လိပ်စာ: Parami English Language Center, South Okkalapa Tsp, Yangon, Myanmar</p>
 </div>
 
+<!-- FOOTER -->
+<footer>
+    © 2025 Parami English Language Center — All Rights Reserved. 
+</footer>
 
 <script>
 function showPage(pageName) {
